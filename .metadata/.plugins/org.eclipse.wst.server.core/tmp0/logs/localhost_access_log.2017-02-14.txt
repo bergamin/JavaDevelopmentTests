@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:00:11:55 -0200] "GET /gerenciador HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:00:12:03 -0200] "GET /gerenciador/buscar HTTP/1.1" 404 1022
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:00:12:16 -0200] "GET /gerenciador/novaEmpresa HTTP/1.1" 200 62
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:00:12:26 -0200] "GET /gerenciador/busca HTTP/1.1" 200 235
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:00:13:01 -0200] "GET /gerenciador/busca?filtro=o HTTP/1.1" 500 40
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:00:13:09 -0200] "GET /gerenciador/busca?filtro= HTTP/1.1" 500 40
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:00:13:15 -0200] "GET /gerenciador/busca HTTP/1.1" 200 235
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:00:13:25 -0200] "GET /gerenciador/busca?filtro=oo HTTP/1.1" 500 40
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:00:13:35 -0200] "GET /gerenciador/busca HTTP/1.1" 200 235
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:20:04:32 -0200] "GET /gerenciador/busca HTTP/1.1" 200 235
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:20:05:15 -0200] "GET /gerenciador/busca HTTP/1.1" 200 217
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:20:05:28 -0200] "GET /gerenciador/busca?filtro=o HTTP/1.1" 200 178
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:20:05:36 -0200] "GET /gerenciador/busca?filtro=rr HTTP/1.1" 200 98
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:20:38:46 -0200] "GET /gerenciador HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:20:39:31 -0200] "GET /gerenciador/ HTTP/1.1" 200 158
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:20:40:34 -0200] "GET /gerenciador/ HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [14/Feb/2017:22:01:58 -0200] "GET /gerenciador/ HTTP/1.1" 304 -

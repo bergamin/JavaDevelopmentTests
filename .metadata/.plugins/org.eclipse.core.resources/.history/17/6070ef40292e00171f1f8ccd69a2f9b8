@@ -1,0 +1,10 @@
+package products;
+
+public class ProductTest {
+	
+	public void verifyPriceWithTax(){
+		Product candy = new Product("Altoids",1.00);
+		assertEquals(1.10,candy.getPriceWithTax());
+	}
+
+}

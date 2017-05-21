@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;jstl-1.2.jar, xstream-1.4.3.jar&apos; to &apos;lib&apos;" description="Move 2 resources to &apos;lib&apos;" destination="WebContent/WEB-INF/lib" element1="/gerenciador/WebContent/WEB-INF/lib/jstl-1.2.jar" element2="/gerenciador/WebContent/WEB-INF/lib/xstream-1.4.3.jar" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="2" stamp="1489361740288" updateReferences="true"/>
+</session>
