@@ -1,0 +1,13 @@
+package br.com.bergamin.urnaeletronica.modelo;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Voto {
+
+	private Restaurante restaurante;
+	private Date dataVoto;
+	
+}

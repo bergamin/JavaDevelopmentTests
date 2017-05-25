@@ -1,0 +1,10 @@
+package br.com.bergamin.urnaeletronica.modelo;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Voto {
+
+	private Restaurante restaurante;
+	
+}

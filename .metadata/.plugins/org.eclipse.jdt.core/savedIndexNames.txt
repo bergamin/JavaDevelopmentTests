@@ -20,7 +20,6 @@ INDEX VERSION 1.130+C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\.me
 3613685540.index
 793912968.index
 134975857.index
-1675565988.index
 3766815368.index
 1250592570.index
 907486336.index
@@ -40,7 +39,6 @@ INDEX VERSION 1.130+C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\.me
 1022186871.index
 1858508294.index
 1216683187.index
-2894560316.index
 223293647.index
 4160179269.index
 4014406707.index

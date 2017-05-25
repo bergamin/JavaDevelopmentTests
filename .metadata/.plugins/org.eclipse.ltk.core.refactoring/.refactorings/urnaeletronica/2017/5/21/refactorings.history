@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;dataVoto&apos; in &apos;br.com.bergamin.urnaeletronica.modelo.Usuario&apos; to &apos;dataUltimoVoto&apos;&#x0D;&#x0A;- Original project: &apos;urnaeletronica&apos;&#x0D;&#x0A;- Original element: &apos;br.com.bergamin.urnaeletronica.modelo.Usuario.dataVoto&apos;&#x0D;&#x0A;- Renamed element: &apos;br.com.bergamin.urnaeletronica.modelo.Usuario.dataUltimoVoto&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;dataVoto&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src\/main\/java&lt;br.com.bergamin.urnaeletronica.modelo{Usuario.java[Usuario^dataVoto" name="dataUltimoVoto" references="true" setter="false" stamp="1495420972647" textual="false" version="1.0"/>
+</session>
