@@ -6,7 +6,9 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 
 	<persistence-unit name="urna-mysql">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>br.com.bergamin.urnaeletronica.model.Voto</class>
+		<class>br.com.bergamin.urnaeletronica.modelo.Restaurante</class>
+		<class>br.com.bergamin.urnaeletronica.modelo.Usuario</class>
+		<class>br.com.bergamin.urnaeletronica.modelo.Voto</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/urnaEletronica" />
