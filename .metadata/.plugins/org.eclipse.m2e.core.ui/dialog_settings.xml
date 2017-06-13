@@ -2,16 +2,10 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="br.com.bergamin.finance"/>
-			<item value="br.com.bergamin.finances"/>
 		</list>
 		<list key="name">
-			<item value="Finance"/>
-			<item value="Finances"/>
 		</list>
 		<list key="artifactId">
-			<item value="finance"/>
-			<item value="finances"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -22,8 +16,6 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
-			<item value="1.0.0-SNAPSHOT"/>
-			<item value="1.0.0 -SNAPSHOT"/>
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
@@ -52,9 +44,9 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests"/>
 			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\Finance"/>
 			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\Finances"/>
-			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests"/>
 			<item value="C:\Users\Guilherme\Desktop\LIMBO\Applications\DBServer_Java"/>
 			<item value="C:\Users\Guilherme\Desktop\LIMBO\Applications\DBServer_Java_Web"/>
 			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\"/>
@@ -70,10 +62,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="br.com.bergamin.finances"/>
 		</list>
 		<list key="groupId">
+			<item value="br.com.bergamin"/>
 		</list>
 		<list key="artifactId">
+			<item value="finances"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -84,6 +79,7 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
+			<item value="1.0.0-SNAPSHOT"/>
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>

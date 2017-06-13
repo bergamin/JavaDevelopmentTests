@@ -1,0 +1,48 @@
+package br.com.bergamin.finances;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import br.com.bergamin.finances.model.Account;
+import br.com.bergamin.finances.util.JPAUtil;
+
+public class AccountTest {
+	
+	public static void main(String[] args) {
+		
+//		insert();
+		retrieve();
+		
+	}
+	
+	static void retrieve(){
+		
+		EntityManager em = new JPAUtil().getEntityManager();
+		em.getTransaction().begin();
+		
+		Account account = em.find(Account.class, 1);
+		
+		em.getTransaction().commit();
+		em.close();
+	}
+	
+	static void insert(){
+		
+		Account account = new Account();
+		account.setHolder("Yet Another Holder's name");
+		account.setOffice("1032");
+		account.setBank("Bank's Name");
+		account.setNumber("8967452301");
+		
+		EntityManager em = new JPAUtil().getEntityManager();
+		em.getTransaction().begin();
+		
+		em.persist(account);
+		
+		em.getTransaction().commit();
+		em.close();
+		
+	}
+	
+}

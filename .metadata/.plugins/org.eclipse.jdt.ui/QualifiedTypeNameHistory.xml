@@ -15,4 +15,25 @@
 <fullyQualifiedTypeName name="br.com.caelum.stella.tinytype.CPF"/>
 <fullyQualifiedTypeName name="products.Product"/>
 <fullyQualifiedTypeName name="br.com.bergamin.accounts.model.Account"/>
+<fullyQualifiedTypeName name="br.com.bergamin.urnaeletronica.modelo.Restaurante"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="br.com.bergamin.finances.model.Account"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
+<fullyQualifiedTypeName name="javax.persistence.Persistence"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
+<fullyQualifiedTypeName name="javax.persistence.Enumerated"/>
+<fullyQualifiedTypeName name="javax.persistence.EnumType"/>
+<fullyQualifiedTypeName name="javax.persistence.Temporal"/>
+<fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+<fullyQualifiedTypeName name="br.com.bergamin.finances.model.Transaction"/>
+<fullyQualifiedTypeName name="br.com.bergamin.finances.model.TransactionType"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="javax.persistence.UniqueConstraint"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="br.com.bergamin.finances.model.Category"/>
 </qualifiedTypeNameHistroy>
