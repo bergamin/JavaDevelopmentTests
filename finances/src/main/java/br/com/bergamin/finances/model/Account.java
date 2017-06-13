@@ -1,4 +1,4 @@
-package br.com.bergamin.finances;
+package br.com.bergamin.finances.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,12 +12,21 @@ public class Account {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String holder;
-	private String numero;
+	private String number;
 	private String bank;
 	private String office;
 	
 	public Integer getId() {
 		return id;
+	}
+	@Override
+	public String toString() {
+		return "Account [id=" + id
+				    + ", holder=" + holder
+				    + ", number=" + number
+				    + ", bank=" + bank
+				    + ", office=" + office
+				    + "]";
 	}
 	public void setId(Integer id) {
 		this.id = id;
@@ -28,11 +37,11 @@ public class Account {
 	public void setHolder(String holder) {
 		this.holder = holder;
 	}
-	public String getNumero() {
-		return numero;
+	public String getNumber() {
+		return number;
 	}
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setNumber(String number) {
+		this.number = number;
 	}
 	public String getBank() {
 		return bank;
