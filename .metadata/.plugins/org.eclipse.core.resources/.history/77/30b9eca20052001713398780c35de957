@@ -1,0 +1,186 @@
+package br.com.bergamin.finances;
+
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import br.com.bergamin.finances.model.Account;
+import br.com.bergamin.finances.model.Category;
+import br.com.bergamin.finances.model.Client;
+import br.com.bergamin.finances.model.Transaction;
+import br.com.bergamin.finances.model.TransactionType;
+import br.com.bergamin.finances.util.JPAUtil;
+
+public class AccountTest {
+	
+	private static EntityManager entityMnager;
+	
+	public static void main(String[] args) {
+		
+		entityMnager = new JPAUtil().getEntityManager();
+		entityMnager.getTransaction().begin();
+		
+		// insert();
+		// retrieve();
+		// relationship();
+		// transactionsWithCategory();
+		// accountClient();
+		//jpql();
+		//transactionsByCategory();
+		transactionAccount();
+		
+		entityMnager.getTransaction().commit();
+		entityMnager.close();
+	}
+	static void transactionAccount(){
+		
+	}
+	static void transactionsByCategory(){
+		
+		String strJpql;
+		Query query;
+		List<Transaction> result;
+		Category category = new Category();
+		
+		category.setId(1);
+		
+		strJpql = "SELECT T"
+			    + "  FROM Transaction T"
+			    + "  JOIN T.category  C"
+			    + " WHERE C = :pCategory";
+		query = entityMnager.createQuery(strJpql);
+		query.setParameter("pCategory", category);
+		result = query.getResultList();
+		
+		for (Transaction transaction : result) {
+			System.out.println(transaction.toString());
+		}
+		
+	}
+	
+	static void jpql(){
+		
+		String strJpql;
+		Query query;
+		List<Transaction> result;
+		Account account = new Account();
+		
+		account.setId(2);
+		
+		strJpql = "SELECT T"
+			    + "  FROM Transaction T"
+			    + " WHERE T.account = :pAccount"
+			    + "   AND T.type    = :pType"
+			    + " ORDER BY T.value DESC";
+		query = entityMnager.createQuery(strJpql);
+		query.setParameter("pAccount", account);
+		query.setParameter("pType", TransactionType.OUT);
+		result = query.getResultList();
+		
+		for (Transaction transaction : result) {
+			System.out.println(transaction.toString());
+		}
+		
+	}
+	
+	static void accountClient() {
+		
+		Account account = new Account();
+		account.setId(2);
+		
+		Client client = new Client();
+		client.setName("Client's Name");
+		client.setAddress("Client's Address");
+		client.setProfession("Client's Profession");
+		client.setAccount(account);
+		
+		entityMnager.persist(client);
+
+	}
+
+	static void transactionsWithCategory() {
+
+		Category cat1 = new Category("Trip");
+		Category cat2 = new Category("Business");
+
+		Account account = new Account();
+		account.setId(2);
+
+		Transaction tra1 = new Transaction();
+		tra1.setDate(Calendar.getInstance());
+		tra1.setDescription("Trip to SP");
+		tra1.setType(TransactionType.OUT);
+		tra1.setValue(new BigDecimal("100.00"));
+		tra1.setCategories(Arrays.asList(cat1, cat2));
+		tra1.setAccount(account);
+
+		Transaction tra2 = new Transaction();
+		tra2.setDate(Calendar.getInstance());
+		tra2.setDescription("Trip to RS");
+		tra2.setType(TransactionType.OUT);
+		tra2.setValue(new BigDecimal("300.00"));
+		tra2.setCategories(Arrays.asList(cat1, cat2));
+		tra2.setAccount(account);
+
+		entityMnager.persist(cat1);
+		entityMnager.persist(cat2);
+		entityMnager.persist(tra1);
+		entityMnager.persist(tra2);
+		
+	}
+
+	static void relationship() {
+
+		Account account = new Account();
+		account.setOffice("0102");
+		account.setBank("Name of another bank");
+		account.setNumber("1846");
+		account.setHolder("Another holder's name");
+
+		Transaction transaction = new Transaction();
+		transaction.setDate(Calendar.getInstance());
+		transaction.setDescription("BBQ");
+		transaction.setType(TransactionType.OUT);
+		transaction.setValue(new BigDecimal("123.45"));
+		transaction.setAccount(account);
+
+		entityMnager.persist(account);
+		entityMnager.persist(transaction);
+
+	}
+
+	static void retrieve() {
+
+		Account account = entityMnager.find(Account.class, 1);
+		System.out.println("\n\n" + account.toString());
+
+		account.setHolder("Changing Holder's Name");
+		account.setBank("Changing Bank's Name");
+
+	}
+
+	static void insert() {
+
+		Account account = new Account();
+		account.setHolder("Yet Another Holder's name");
+		account.setOffice("1032");
+		account.setBank("Bank's Name");
+		account.setNumber("8967452301");
+
+		EntityManager em = new JPAUtil().getEntityManager();
+		em.getTransaction().begin();
+
+		em.persist(account);
+
+		em.getTransaction().commit();
+		em.close();
+
+	}
+
+}

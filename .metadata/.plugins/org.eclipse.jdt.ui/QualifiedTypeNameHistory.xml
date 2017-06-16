@@ -17,7 +17,6 @@
 <fullyQualifiedTypeName name="br.com.bergamin.accounts.model.Account"/>
 <fullyQualifiedTypeName name="br.com.bergamin.urnaeletronica.modelo.Restaurante"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="br.com.bergamin.finances.model.Account"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
 <fullyQualifiedTypeName name="javax.persistence.Persistence"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
@@ -36,4 +35,5 @@
 <fullyQualifiedTypeName name="javax.persistence.UniqueConstraint"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
 <fullyQualifiedTypeName name="br.com.bergamin.finances.model.Category"/>
+<fullyQualifiedTypeName name="br.com.bergamin.finances.model.Account"/>
 </qualifiedTypeNameHistroy>
