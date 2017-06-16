@@ -19,97 +19,104 @@ import br.com.bergamin.finances.util.JPAUtil;
 
 public class AccountTest {
 
+	private static EntityManager entityMnager;
+
 	public static void main(String[] args) {
-		
+
+		entityMnager = new JPAUtil().getEntityManager();
+		entityMnager.getTransaction().begin();
+
 		// insert();
 		// retrieve();
 		// relationship();
 		// transactionsWithCategory();
 		// accountClient();
-		//jpql();
-		transactionsByCategory();
+		// jpql();
+		// transactionsByCategory();
+		// transactionAccount();
+		everyTransaction();
+
+		entityMnager.getTransaction().commit();
+		entityMnager.close();
+	}
+
+	static void everyTransaction() {
+
+		Query query = entityMnager.createQuery("SELECT DISTINCT a FROM Account a LEFT JOIN FETCH a.transactions");
+		List<Account> accountList = query.getResultList();
+
+		for (Account account : accountList) {
+			System.out.println("Holder: " + account.getHolder());
+			System.out.println("Transactions:");
+			System.out.println(account.getTransactions());
+		}
 
 	}
-	
-	static void transactionsByCategory(){
-		
+
+	static void transactionAccount() {
+
+		Transaction transaction = entityMnager.find(Transaction.class, 2);
+		Account account = transaction.getAccount();
+
+		System.out.println(account.getHolder() + " executed " + account.getTransactions().size() + " transactions");
+
+	}
+
+	static void transactionsByCategory() {
+
 		String strJpql;
 		Query query;
 		List<Transaction> result;
 		Category category = new Category();
-		
-		EntityManager em = new JPAUtil().getEntityManager();
-		em.getTransaction().begin();
-		
+
 		category.setId(1);
-		
-		strJpql = "SELECT T"
-			    + "  FROM Transaction T"
-			    + "  JOIN T.category  C"
-			    + " WHERE C = :pCategory";
-		query = em.createQuery(strJpql);
+
+		strJpql = "SELECT T" + "  FROM Transaction T" + "  JOIN T.category  C" + " WHERE C = :pCategory";
+		query = entityMnager.createQuery(strJpql);
 		query.setParameter("pCategory", category);
 		result = query.getResultList();
-		
+
 		for (Transaction transaction : result) {
 			System.out.println(transaction.toString());
 		}
-		
-		em.getTransaction().commit();
-		em.close();
-		
+
 	}
-	
-	static void jpql(){
-		
+
+	static void jpql() {
+
 		String strJpql;
 		Query query;
 		List<Transaction> result;
 		Account account = new Account();
-		
-		EntityManager em = new JPAUtil().getEntityManager();
-		em.getTransaction().begin();
-		
+
 		account.setId(2);
-		
-		strJpql = "SELECT T"
-			    + "  FROM Transaction T"
-			    + " WHERE T.account = :pAccount"
-			    + "   AND T.type    = :pType"
-			    + " ORDER BY T.value DESC";
-		query = em.createQuery(strJpql);
+
+		strJpql = "SELECT T" + "  FROM Transaction T" + " WHERE T.account = :pAccount" + "   AND T.type    = :pType"
+				+ " ORDER BY T.value DESC";
+		query = entityMnager.createQuery(strJpql);
 		query.setParameter("pAccount", account);
 		query.setParameter("pType", TransactionType.OUT);
 		result = query.getResultList();
-		
+
 		for (Transaction transaction : result) {
 			System.out.println(transaction.toString());
 		}
-		
-		em.getTransaction().commit();
-		em.close();
-		
+
 	}
-	
+
 	static void accountClient() {
-		
+
 		Account account = new Account();
 		account.setId(2);
-		
+
 		Client client = new Client();
 		client.setName("Client's Name");
 		client.setAddress("Client's Address");
 		client.setProfession("Client's Profession");
 		client.setAccount(account);
-		
-		EntityManager em = new JPAUtil().getEntityManager();
-		em.getTransaction().begin();
 
-		em.persist(client);
+		entityMnager.persist(client);
 
-		em.getTransaction().commit();
-		em.close();
-		
 	}
 
 	static void transactionsWithCategory() {
@@ -136,16 +143,10 @@ public class AccountTest {
 		tra2.setCategories(Arrays.asList(cat1, cat2));
 		tra2.setAccount(account);
 
-		EntityManager em = new JPAUtil().getEntityManager();
-		em.getTransaction().begin();
-
-		em.persist(cat1);
-		em.persist(cat2);
-		em.persist(tra1);
-		em.persist(tra2);
-
-		em.getTransaction().commit();
-		em.close();
+		entityMnager.persist(cat1);
+		entityMnager.persist(cat2);
+		entityMnager.persist(tra1);
+		entityMnager.persist(tra2);
 
 	}
 
@@ -164,30 +165,18 @@ public class AccountTest {
 		transaction.setValue(new BigDecimal("123.45"));
 		transaction.setAccount(account);
 
-		EntityManager em = new JPAUtil().getEntityManager();
-		em.getTransaction().begin();
-
-		em.persist(account);
-		em.persist(transaction);
-
-		em.getTransaction().commit();
-		em.close();
+		entityMnager.persist(account);
+		entityMnager.persist(transaction);
 
 	}
 
 	static void retrieve() {
 
-		EntityManager em = new JPAUtil().getEntityManager();
-		em.getTransaction().begin();
-
-		Account account = em.find(Account.class, 1);
+		Account account = entityMnager.find(Account.class, 1);
 		System.out.println("\n\n" + account.toString());
 
 		account.setHolder("Changing Holder's Name");
 		account.setBank("Changing Bank's Name");
-
-		em.getTransaction().commit();
-		em.close();
 
 	}
 
@@ -199,13 +188,7 @@ public class AccountTest {
 		account.setBank("Bank's Name");
 		account.setNumber("8967452301");
 
-		EntityManager em = new JPAUtil().getEntityManager();
-		em.getTransaction().begin();
-
-		em.persist(account);
-
-		em.getTransaction().commit();
-		em.close();
+		entityMnager.persist(account);
 
 	}
 
