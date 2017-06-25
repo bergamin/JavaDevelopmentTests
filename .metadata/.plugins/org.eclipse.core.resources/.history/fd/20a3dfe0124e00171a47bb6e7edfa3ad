@@ -1,5 +1,0 @@
-package br.com.bergamin.finances.util;
-
-public class JPAUtil {
-
-}

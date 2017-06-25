@@ -1,5 +1,0 @@
-package br.com.bergamin.urnaeletronica.util;
-
-public class JPAUtil {
-	
-}

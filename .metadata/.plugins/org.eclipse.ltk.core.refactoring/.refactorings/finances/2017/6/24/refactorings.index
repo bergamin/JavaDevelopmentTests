@@ -1,3 +1,4 @@
 1497214744056	Rename enum constant 'ENTRADA'
 1497214776577	Rename enum constant 'SAIDA'
 1497226158173	Rename method 'setCategory'
+1497726155186	Rename local variable 'strJpql'
