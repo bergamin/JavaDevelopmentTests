@@ -6,9 +6,8 @@ import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.com.bergamin.finances.model.Account;
 import br.com.bergamin.finances.model.Category;
@@ -19,12 +18,12 @@ import br.com.bergamin.finances.util.JPAUtil;
 
 public class AccountTest {
 
-	private static EntityManager entityMnager;
+	private static EntityManager entityManager;
 
 	public static void main(String[] args) {
 
-		entityMnager = new JPAUtil().getEntityManager();
-		entityMnager.getTransaction().begin();
+		entityManager = new JPAUtil().getEntityManager();
+		entityManager.getTransaction().begin();
 
 		// insert();
 		// retrieve();
@@ -34,15 +33,29 @@ public class AccountTest {
 		// jpql();
 		// transactionsByCategory();
 		// transactionAccount();
-		everyTransaction();
+		// everyTransaction();
+		namedQuery();
 
-		entityMnager.getTransaction().commit();
-		entityMnager.close();
+		entityManager.getTransaction().commit();
+		entityManager.close();
 	}
+	
+	static void namedQuery(){
+		
+		Account account = new Account();
+		account.setId(2);
 
+		TypedQuery<BigDecimal> typedQuery = entityManager.createNamedQuery("SumValue",BigDecimal.class);
+		typedQuery.setParameter("pAccount", account);
+		typedQuery.setParameter("pType", TransactionType.OUT);
+		
+		System.out.println("Sum: "+ typedQuery.getSingleResult());
+		
+	}
+	
 	static void everyTransaction() {
-
-		Query query = entityMnager.createQuery("SELECT DISTINCT a FROM Account a LEFT JOIN FETCH a.transactions");
+		
+		Query query = entityManager.createQuery("SELECT DISTINCT a FROM Account a LEFT JOIN FETCH a.transactions");
 		List<Account> accountList = query.getResultList();
 
 		for (Account account : accountList) {
@@ -55,7 +68,7 @@ public class AccountTest {
 
 	static void transactionAccount() {
 
-		Transaction transaction = entityMnager.find(Transaction.class, 2);
+		Transaction transaction = entityManager.find(Transaction.class, 2);
 		Account account = transaction.getAccount();
 
 		System.out.println(account.getHolder() + " executed " + account.getTransactions().size() + " transactions");
@@ -72,7 +85,7 @@ public class AccountTest {
 		category.setId(1);
 
 		strJpql = "SELECT T" + "  FROM Transaction T" + "  JOIN T.category  C" + " WHERE C = :pCategory";
-		query = entityMnager.createQuery(strJpql);
+		query = entityManager.createQuery(strJpql);
 		query.setParameter("pCategory", category);
 		result = query.getResultList();
 
@@ -84,16 +97,15 @@ public class AccountTest {
 
 	static void jpql() {
 
-		String strJpql;
+		String jpql;
 		Query query;
 		List<Transaction> result;
 		Account account = new Account();
 
 		account.setId(2);
 
-		strJpql = "SELECT T" + "  FROM Transaction T" + " WHERE T.account = :pAccount" + "   AND T.type    = :pType"
-				+ " ORDER BY T.value DESC";
-		query = entityMnager.createQuery(strJpql);
+		jpql = "SELECT t FROM Transaction t WHERE t.account = :pAccount AND t.type = :pType ORDER BY t.value DESC";
+		query = entityManager.createQuery(jpql);
 		query.setParameter("pAccount", account);
 		query.setParameter("pType", TransactionType.OUT);
 		result = query.getResultList();
@@ -101,7 +113,18 @@ public class AccountTest {
 		for (Transaction transaction : result) {
 			System.out.println(transaction.toString());
 		}
-
+		
+		System.out.println("--------------------------------------------------------");
+		
+		jpql = "SELECT SUM(t.value) FROM Transaction t WHERE t.account = :pAccount AND t.type = :pType";
+		query = entityManager.createQuery(jpql);
+		query.setParameter("pAccount", account);
+		query.setParameter("pType", TransactionType.OUT);
+		
+		BigDecimal sum = (BigDecimal) query.getSingleResult();
+		
+		System.out.println("Sum: "+ sum);
+		
 	}
 
 	static void accountClient() {
@@ -115,7 +138,7 @@ public class AccountTest {
 		client.setProfession("Client's Profession");
 		client.setAccount(account);
 
-		entityMnager.persist(client);
+		entityManager.persist(client);
 
 	}
 
@@ -143,10 +166,10 @@ public class AccountTest {
 		tra2.setCategories(Arrays.asList(cat1, cat2));
 		tra2.setAccount(account);
 
-		entityMnager.persist(cat1);
-		entityMnager.persist(cat2);
-		entityMnager.persist(tra1);
-		entityMnager.persist(tra2);
+		entityManager.persist(cat1);
+		entityManager.persist(cat2);
+		entityManager.persist(tra1);
+		entityManager.persist(tra2);
 
 	}
 
@@ -165,14 +188,14 @@ public class AccountTest {
 		transaction.setValue(new BigDecimal("123.45"));
 		transaction.setAccount(account);
 
-		entityMnager.persist(account);
-		entityMnager.persist(transaction);
+		entityManager.persist(account);
+		entityManager.persist(transaction);
 
 	}
 
 	static void retrieve() {
 
-		Account account = entityMnager.find(Account.class, 1);
+		Account account = entityManager.find(Account.class, 1);
 		System.out.println("\n\n" + account.toString());
 
 		account.setHolder("Changing Holder's Name");
@@ -188,7 +211,7 @@ public class AccountTest {
 		account.setBank("Bank's Name");
 		account.setNumber("8967452301");
 
-		entityMnager.persist(account);
+		entityManager.persist(account);
 
 	}
 

@@ -12,10 +12,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+// Another option to the named queries is the use of DAO classes
+@NamedQuery(query="SELECT SUM(t.value) FROM Transaction t WHERE t.account = :pAccount AND t.type = :pType",
+            name="SumValue")
 public class Transaction {
 
 	@Id
