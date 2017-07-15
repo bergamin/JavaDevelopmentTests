@@ -1,0 +1,5 @@
+package br.com.bergamin.bookstore.config;
+
+public class JPAConfiguration {
+
+}

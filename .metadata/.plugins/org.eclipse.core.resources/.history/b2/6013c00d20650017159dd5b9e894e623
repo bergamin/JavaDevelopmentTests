@@ -1,0 +1,11 @@
+package br.com.bergamin.bookstore.dao;
+
+import br.com.bergamin.bookstore.model.Product;
+
+public class ProductDAO {
+
+	public void save(Product product) {
+		
+	}
+
+}

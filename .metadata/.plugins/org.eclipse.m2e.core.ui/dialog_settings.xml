@@ -45,6 +45,7 @@
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
 			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests"/>
+			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\library\pom.xml"/>
 			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\Finance"/>
 			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\Finances"/>
 			<item value="C:\Users\Guilherme\Desktop\LIMBO\Applications\DBServer_Java"/>
@@ -62,13 +63,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="br.com.bergamin.finances"/>
+			<item value="br.com.bergamin.bookStore"/>
+			<item value="br.com.bergamin.library"/>
 		</list>
 		<list key="groupId">
 			<item value="br.com.bergamin"/>
 		</list>
 		<list key="artifactId">
-			<item value="finances"/>
+			<item value="bookStore"/>
+			<item value="library"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

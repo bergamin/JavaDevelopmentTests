@@ -1,0 +1,25 @@
+package br.com.bergamin.bookstore.model;
+
+import java.math.BigDecimal;
+
+public class Price {
+	
+	private BigDecimal value;
+	private PriceType type;
+	
+	public BigDecimal getValue() {
+		return value;
+	}
+	public void setValue(BigDecimal value) {
+		this.value = value;
+	}
+	public PriceType getType() {
+		return type;
+	}
+	public void setType(PriceType type) {
+		this.type = type;
+	}
+	
+	
+	
+}
