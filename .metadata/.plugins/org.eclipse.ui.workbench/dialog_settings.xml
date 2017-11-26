@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="343" key="DIALOG_X_ORIGIN"/>
-		<item value="22" key="DIALOG_Y_ORIGIN"/>
+		<item value="243" key="DIALOG_X_ORIGIN"/>
+		<item value="121" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="250" key="dialogHeight"/>
@@ -10,20 +10,16 @@
 		<list key="textEntries">
 			<item value="1"/>
 			<item value="1"/>
-			<item value="1"/>
 		</list>
 		<list key="orderedElements">
-			<item value="org.eclipse.jdt.ui.edit.text.java.create.getter.setter"/>
 			<item value="org.eclipse.ui.views.ProblemView"/>
 			<item value="org.eclipse.wst.server.ui.ServersView"/>
 		</list>
 		<list key="orderedProviders">
-			<item value="org.eclipse.ui.commands"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
 		<list key="textArray">
-			<item value="getter"/>
 			<item value="pro"/>
 			<item value="server"/>
 		</list>
@@ -36,5 +32,9 @@
 		</list>
 	</section>
 	<section name="ImportExportAction">
+		<item value="org.eclipse.m2e.core.wizards.Maven2ImportWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.m2e"/>
+		</list>
 	</section>
 </section>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="CleanDialogSettings">
-		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="662" key="DIALOG_WIDTH"/>
 		<item value="true" key="TOGGLE_SELECTED"/>
-		<item value="378" key="DIALOG_HEIGHT"/>
+		<item value="452" key="DIALOG_HEIGHT"/>
 		<item value="464" key="DIALOG_X_ORIGIN"/>
 		<item value="132" key="DIALOG_Y_ORIGIN"/>
 	</section>
@@ -12,6 +12,7 @@
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\Projetos\livraria"/>
 			<item value="C:\Users\Guilherme\Desktop\projeto-gerenciador\gerenciador"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
@@ -23,9 +24,9 @@
 		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.m2e.core.wizards.Maven2ProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.wst.web.ui"/>
+			<item value="org.eclipse.m2e"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
@@ -41,5 +42,12 @@
 			<item value="360" key="DIALOG_X_ORIGIN"/>
 			<item value="59" key="DIALOG_Y_ORIGIN"/>
 		</section>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item value="700" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="645" key="DIALOG_HEIGHT"/>
+		<item value="580" key="DIALOG_X_ORIGIN"/>
+		<item value="119" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

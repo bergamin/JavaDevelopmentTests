@@ -149,7 +149,11 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\gerenciador" path="/gerenciador" reloadable="true" source="org.eclipse.jst.jee.server:gerenciador"/><Context docBase="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\bookStore" path="/bookStore" reloadable="true" source="org.eclipse.jst.j2ee.server:bookStore"/></Host>
+      <Context docBase="D:\Projetos\JavaDevelopmentTests\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\Projetos\JavaDevelopmentTests\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\urna" path="/urna" reloadable="true" source="org.eclipse.jst.jee.server:urna">
+	<Resource auth="Container" factory="org.jboss.weld.resources.ManagerObjectFactory" name="BeanManager" type="javax.enterprise.inject.spi.BeanManager"/>
+</Context><Context docBase="D:\Projetos\JavaDevelopmentTests\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\livraria" path="/livraria" reloadable="true" source="org.eclipse.jst.jee.server:livraria">
+	<Resource auth="Container" factory="org.jboss.weld.resources.ManagerObjectFactory" name="BeanManager" type="javax.enterprise.inject.spi.BeanManager"/>
+</Context></Host>
     </Engine>
   </Service>
 </Server>

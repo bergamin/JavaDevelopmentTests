@@ -2,7 +2,11 @@
 <modules>
   <module moduleId="org.eclipse.jst.jee.server:library" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.j2ee.server:bookStore" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:livraria" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.j2ee.server:library" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.j2ee.server:urnaeletronica" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:gerenciador" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.j2ee.server:urna" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Urna Eletrônica"/>
+  <module moduleId="org.eclipse.jst.jee.server:urna" serverId="Tomcat v8.5 Server at localhost"/>
 </modules>

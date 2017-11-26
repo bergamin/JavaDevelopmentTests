@@ -1,7 +1,0 @@
-127.0.0.1 - - [09/Feb/2017:14:34:54 -0200] "GET / HTTP/1.1" 404 986
-0:0:0:0:0:0:0:1 - - [09/Feb/2017:15:06:12 -0200] "GET /gerenciador/WEB-INF/classes/br/com/alura/gerenciador/web/BuscaEmpresa.java HTTP/1.1" 404 984
-127.0.0.1 - - [09/Feb/2017:18:29:46 -0200] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
-127.0.0.1 - - [09/Feb/2017:18:29:46 -0200] "GET /manager/text/ HTTP/1.1" 404 1012
-127.0.0.1 - - [09/Feb/2017:18:29:46 -0200] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
-127.0.0.1 - - [09/Feb/2017:18:29:46 -0200] "GET /manager/text/ HTTP/1.1" 404 1012
-0:0:0:0:0:0:0:1 - - [09/Feb/2017:18:31:45 -0200] "GET /gerenciador/servlet/br.com.alura.gerenciador.web.BuscaEmpresa HTTP/1.1" 404 1108

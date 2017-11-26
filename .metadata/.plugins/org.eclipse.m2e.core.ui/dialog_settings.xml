@@ -31,6 +31,20 @@
 		<list key="issueManagementUrl">
 		</list>
 	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\Projetos\JavaDevelopmentTests\bookStore"/>
+			<item value="D:\Projetos\JavaDevelopmentTests\library"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
 	<section name="MavenProjectWizardArchetypePage">
 		<item value="All Catalogs" key="catalog"/>
 		<list key="projectNameTemplate">
@@ -44,6 +58,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\Projetos"/>
+			<item value="D:\Projetos\JavaDevelopmentTests"/>
 			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests"/>
 			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\library\pom.xml"/>
 			<item value="C:\Users\Guilherme\Documents\GitHub\JavaDevelopmentTests\Finance"/>
@@ -63,15 +79,17 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="br.com.bergamin.bookStore"/>
-			<item value="br.com.bergamin.library"/>
+			<item value="br.com.bergamin.urna"/>
+			<item value="br.com.caelum.livraria"/>
+			<item value="br.com.bergamin.livraria"/>
 		</list>
 		<list key="groupId">
 			<item value="br.com.bergamin"/>
+			<item value="br.com.caelum"/>
 		</list>
 		<list key="artifactId">
-			<item value="bookStore"/>
-			<item value="library"/>
+			<item value="urna"/>
+			<item value="livraria"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -82,8 +100,8 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
-			<item value="1.0.0-SNAPSHOT"/>
 			<item value="0.0.1-SNAPSHOT"/>
+			<item value="1.0.0"/>
 		</list>
 	</section>
 </section>
