@@ -1,0 +1,55 @@
+<!-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="f" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
+<!DOCTYPE html> -->
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://www.springframework.org/tags/form"
+      xmlns:s="http://www.springframework.org/tags"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+	<h:body>
+		<!-- <h:form action="${s:mvcUrl('PC#save').build()}"
+		        method="post"
+		        commandName="product"
+		        enctype="multipart/form-data">
+			
+			<div>
+				<label>Title</label>
+				<f:input path="title" />
+				<f:errors path="title" />
+			</div>
+			<div>
+				<label>Description</label>
+				<f:textarea rows="10" cols="20" path="description" />
+				<f:errors path="description" />
+			</div>
+			<div>
+				<label>Pages</label>
+				<f:input path="pages" />
+				<f:errors path="pages" />
+			</div>
+			<div>
+				<label>Release Date</label>
+				<f:input path="releaseDate" />
+				<f:errors path="releaseDate"/>
+			</div>
+			<c:forEach items="${types}" var="type" varStatus="status">
+				<div>
+					<label>${type}</label>
+					<f:input path="prices[${status.index}].value" />
+					<f:hidden path="prices[${status.index}].type" value="${type}" />
+				</div>
+			</c:forEach>
+			<div>
+				<label>Summary</label>
+				<f:input path="summary" type="file" />
+			</div>
+			<button type="submit" name="save">Save</button>
+		</h:form> -->
+	</h:body>
+</html>

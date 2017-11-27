@@ -1,5 +1,7 @@
 package br.com.bergamin.bookstore.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -17,6 +19,20 @@ public class ProductDAO {
 	
 	public void save(Product product) {
 		manager.persist(product);
+	}
+
+	public List<Product> list() {
+		return manager.createQuery("SELECT P FROM Product P", Product.class).getResultList();
+	}
+
+	public Product find(Integer id) {
+		return manager.createQuery(
+				"SELECT DISTINCT p"
+				+ " FROM Product P "
+				+ "JOIN FETCH P.prices prices"
+				+ "WHERE P.id = :id", Product.class)
+				.setParameter("id",id)
+				.getSingleResult();
 	}
 
 }
